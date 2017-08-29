@@ -35,19 +35,16 @@
      }
      
      //TAREA
-     public void darDeBaja(int claveEstudiante)
+     public boolean darDeBaja(int claveEstudiante)
      {
-         //buscar el estudiante con la clave 
-         //Asignar null
-         for(int i = 0; i < estudiantes.length; i++)
-         {
-           if(estudiantes[i].dimeClave() == claveEstudiante)
-           {
-               estudiantes[i] = null;
-               i = estudiantes.length;
-           }
-         }
+         int existe = this.buscaEstudiante(claveEstudiante);
          
+         if(existe != -1)
+         {
+             estudiantes[existe] = null;
+             return true;
+         }
+         return false;
      }
      
      /**Busca un estudiante por medeio de su clave 
@@ -58,10 +55,12 @@
      {
          for(int i = 0; i < estudiantes.length; i++)
          {
-             if(estudiantes[i].dimeClave() == claveEstudiante)
-             {
+             if(estudiantes[i] != null){
+               if(estudiantes[i].dimeClave() == claveEstudiante)
+               {
                  return i;
-             }
+               }
+            }
          }
          
          return -1;
