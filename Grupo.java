@@ -34,7 +34,11 @@
          return true;//El estudiante fue inscrito
      }
      
-     //TAREA
+     /**
+        Da de baja un estudiante existente en el arreglo.
+        @param claveEstudiante es la clave del estudiante que se va a buscar para dar de baja
+        @return Regresa verdadero(true) si el estudiante fue dado de baja o falso(false) en caso de que no sea pueda
+     **/
      public boolean darDeBaja(int claveEstudiante)
      {
          int existe = this.buscaEstudiante(claveEstudiante);
@@ -48,8 +52,8 @@
      }
      
      /**Busca un estudiante por medeio de su clave 
-        la cavle del estudiante a buscar es un parametro "claveEstudiante"
-        regresa la posicion del estudiante en el arreglo 0/1 si no esta
+        @param claveEstudiante la cavle del estudiante a buscar es un parametro "claveEstudiante"
+        @return Regresa la posicion del estudiante en el arreglo o -1 si no esta
      **/
      public int buscaEstudiante(int claveEstudiante)
      {
@@ -68,7 +72,7 @@
      
      /**
       *  busca un espacio disponible en el arreglo
-      *  @return regresa l aprimer posicion null dentro del arreglo o -1 si esta lleno.
+      *  @return regresa la primer posicion null dentro del arreglo o -1 si esta lleno.
      **/
      private int buscaEspacioDisponible()
      {
