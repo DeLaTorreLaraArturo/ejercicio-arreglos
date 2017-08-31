@@ -1,4 +1,8 @@
- public class Grupo
+/**
+ * @author Arturo De La Torre Lara
+ * @version 30 de Agosto del 2017
+ */ 
+public class Grupo
  {
      private String nombreMateria;
      private Estudiante[] estudiantes;
@@ -16,7 +20,8 @@
      **/
      public boolean inscribir(Estudiante unEstudiante)
      {   
-         int existe = this.buscaEstudiante(unEstudiante.dimeClave());
+         /*int existe = this.buscaEstudiante(unEstudiante.dimeClave());*/
+         int existe = this.buscaEstudiante(unEstudiante.dimeNombre());
          
          if(existe != -1)
          {
@@ -70,8 +75,43 @@
          return -1;
      }
      
+     /**Busca un estudiante por medeio de su Nombre
+        @param nombreAlumno el nombre del estudiante a buscar es un parametro "nombreAlumno"
+        @return Regresa la posicion del estudiante en el arreglo o -1 si no esta
+     **/
+     public int buscaEstudiante(String nombreAlumno)
+     {
+         for(int i = 0; i < estudiantes.length; i++)
+         {
+             if(estudiantes[i] != null){
+               if(estudiantes[i].dimeNombre().equals(nombreAlumno))
+               {
+                 return i;
+               }
+            }
+         }
+         
+         return -1;
+     }
+     /*
+     public int buscaEstudiante(String apellidoAlumno)
+     {
+         for(int i = 0; i < estudiantes.length; i++)
+         {
+             if(estudiantes[i] != null){
+               if(estudiantes[i].dimeApellido().equals(apellidoAlumno))
+               {
+                 return i;
+               }
+            }
+         }
+         
+         return -1;
+     }
+      */
+     
      /**
-      *  busca un espacio disponible en el arreglo
+      *  Busca un espacio disponible en el arreglo
       *  @return regresa la primer posicion null dentro del arreglo o -1 si esta lleno.
      **/
      private int buscaEspacioDisponible()

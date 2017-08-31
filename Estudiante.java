@@ -1,11 +1,17 @@
+/**
+ * @author Arturo De La Torre Lara
+ * @version 30 deAgosto del 2017
+ */
 public class Estudiante
 {
     private String nom;
+    private String apell;
     private int cla;
     
-    public Estudiante(String nombre, int clave)
+    public Estudiante(String nombre, String apellido, int clave)
     {
         nom = nombre;
+        apell = apellido;
         cla = clave;
     }
     
@@ -23,5 +29,21 @@ public class Estudiante
     public int dimeClave()
     {
         return cla;
+    }
+    
+    /**
+     * @return Regresa solament el nombre del alumno
+     */
+    public String dimeNombre()
+    {
+        return nom;
+    }
+    
+    /**
+     * @return Regresa solamente el apellido del alumno
+     */
+    public String dimeApellido()
+    {
+        return apell;
     }
 }
